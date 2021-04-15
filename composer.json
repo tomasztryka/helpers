@@ -1,0 +1,26 @@
+{
+    "name": "tomasztryka/helpers",
+    "description": "A custom helpers package with possibility to create helpers.php file in app/helpers directory.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomasz Tryka"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^5.7|^5.8|^6.0|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TomaszTryka\\Helpers\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TomaszTryka\\Helpers\\Providers\\ServiceProvider"
+            ]
+        }
+    }
+}
