@@ -1,4 +1,4 @@
-# Laravel Helpers
+# Custom Laravel Helpers
 
 Laravel package with collection of custom helpers. It creates a `Helpers/helpers.php` file inside `app/` directory.  
 
