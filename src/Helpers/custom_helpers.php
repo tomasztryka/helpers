@@ -33,3 +33,17 @@ if (!function_exists('toBool')) {
         return filter_var($value, FILTER_VALIDATE_BOOLEAN);
     }
 }
+
+if (!function_exists('removeSortByFromRequestQuery')) {
+    function removeSortByFromRequestQuery()
+    {
+        request()->query->set('sort_by', null);
+    }
+}
+
+if (!function_exists('isJoined')) {
+    function isJoined($query, $table)
+    {
+        return collect($query->getQuery()->joins)->pluck('table')->contains($table);
+    }
+}
