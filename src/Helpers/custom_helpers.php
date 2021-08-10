@@ -47,3 +47,25 @@ if (!function_exists('isJoined')) {
         return collect($query->getQuery()->joins)->pluck('table')->contains($table);
     }
 }
+
+if (!function_exists('commaExplode')) {
+    function commaExplode(string $string): array
+    {
+        if (empty($string)) {
+            return [];
+        }
+
+        return explode(',', $string);
+    }
+}
+
+if (!function_exists('commaImplode')) {
+    function commaImplode(array $array): string
+    {
+        if (empty($array)) {
+            return '';
+        }
+
+        return implode(',', $array);
+    }
+}
