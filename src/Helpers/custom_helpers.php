@@ -174,3 +174,25 @@ if (!function_exists('nestedKeyExist')) {
         return false;
     }
 }
+
+if (!function_exists('removeValueFromArray')) {
+    function removeValueFromArray(array $array, mixed $value, bool $reindex = false): array
+    {
+        return !$reindex ? array_diff($array, $value) : array_values(array_diff($array, $value)) ;
+    }
+}
+
+if (!function_exists('asHumanReadableSize')) {
+    function asHumanReadableSize($size, $precision = 2)
+    {
+        if (!$size || $size < 0) {
+            return $size;
+        }
+        if ($size > 0) {
+            $size = (int)$size;
+            $base = log($size) / log(1024);
+            $suffixes = array(' bytes', ' KB', ' MB', ' GB', ' TB');
+            return round(pow(1024, $base - floor($base)), $precision) . $suffixes[floor($base)];
+        }
+    }
+}
